@@ -1,0 +1,2 @@
+# ProjektMajchrzak
+Kalkulatory w pythonie
