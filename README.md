@@ -21,3 +21,5 @@ Harmonogram:
 11.04 Napisanie kalkulatora naukowego oraz cześciowe testy menu oraz kalkulatora podstawowego
 23.05 Pełne testy oraz gotowe UI
 13.06 Dokumentacja projektu
+
+Drogi komunikacji: Github
