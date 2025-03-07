@@ -3,7 +3,9 @@ Kalkulatory w pythonie
 
 
 Projekt będzie posiadał podstawowe menu,
+
 Kalkulator prosty,
+
 Kalkulator naukowy,
 ...
 
