@@ -9,6 +9,8 @@ Kalkulator prosty,
 Kalkulator naukowy,
 ...
 
+
+
 Skład grupy: Antoni Bogusz, Jan Kurkowski
 
 Podział ról:
