@@ -18,7 +18,7 @@
   * *Antoni Bogusz*: część graficzna, testy  
   * *Jan Kurkowski*: Działanie aplikacji
 
-***Język python🐉***
+***🐉 Język python***
 
 ***⚙ Aplikajca desktopowa***  
 
