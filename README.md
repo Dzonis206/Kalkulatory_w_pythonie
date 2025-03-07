@@ -1,23 +1,23 @@
 # ProjektMajchrzak
-Kalkulatory w pythonie
+🧮Kalkulatory w pythonie
 
 
 Projekt będzie posiadał podstawowe menu,
-Kalkulator prosty,
-Kalkulator naukowy,
+➕Kalkulator prosty,
+✖️Kalkulator naukowy,
 ...
 
 
 
-Skład grupy: Antoni Bogusz, Jan Kurkowski
+💁‍♂️Skład grupy: Antoni Bogusz, Jan Kurkowski
 
-Podział ról:
+☘️Podział ról:
 Antoni Bogusz część graficzna, testy
 Jan Kurkowski: Działanie aplikacji
 
-Język python
+Język python🐉
 
-Harmonogram: 
+📅Harmonogram: 
 
 07.03 Omówienie szczegółów aplikacji
 
@@ -29,10 +29,10 @@ Harmonogram:
 
 13.06 Dokumentacja projektu
 
-Drogi komunikacji: 
+☎️Drogi komunikacji: 
 Github
 Messenger
 Discord
 
-Kontakt z nauczycielem:
+📞Kontakt z nauczycielem:
 W szkole na lekcji
