@@ -1,5 +1,5 @@
-# ProjektMajchrzak
-🧮Kalkulatory w pythonie
+# 🧮Kalkulatory w pythonie
+
 
 
 Projekt będzie posiadał podstawowe menu,
