@@ -19,6 +19,7 @@
   * *Jan Kurkowski*: Działanie aplikacji
 
 ***Język python🐉***
+
 ***⚙ Aplikajca desktopowa***  
 
 
