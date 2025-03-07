@@ -26,3 +26,6 @@ Drogi komunikacji:
 Github
 Messenger
 Discord
+
+Kontakt z nauczycielem:
+W szkole na lekcji
