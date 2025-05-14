@@ -1,6 +1,7 @@
 import tkinter as tk
-from tkinter import messagebox
-import math  
+from tkinter import messagebox, simpledialog  # Import simpledialog for input dialogs
+import math
+import matplotlib.pyplot as plt  # Import matplotlib for graphing
 
 def click(event):
     global expression
@@ -46,9 +47,35 @@ def open_advanced_functions():
             expression = ""
             input_var.set("")
 
+    def plot_graph():
+        try:
+            # Prompt the user for a mathematical function
+            function = simpledialog.askstring("Input", "Enter a function of x (e.g., x**2, math.sin(x)):")
+            if not function:
+                messagebox.showerror("Error", "No function entered")
+                return
+
+            # Generate x values and evaluate the function
+            x = [i for i in range(-10, 11)]
+            y = [eval(function.replace("x", str(i))) for i in x]
+
+            # Plot the graph
+            plt.figure("Graph")
+            plt.plot(x, y, label=f"y = {function}")
+            plt.axhline(0, color="black", linewidth=0.5)
+            plt.axvline(0, color="black", linewidth=0.5)
+            plt.grid(color="gray", linestyle="--", linewidth=0.5)
+            plt.legend()
+            plt.title("Graph")
+            plt.xlabel("x")
+            plt.ylabel("y")
+            plt.show()
+        except Exception as e:
+            messagebox.showerror("Error", f"Invalid function: {e}")
+
     # Advanced function buttons
     advanced_buttons = [
-        "x²", "√x", "1/x"
+        "x²", "√x", "1/x", "Graph"
     ]
 
     row = 0
@@ -56,7 +83,10 @@ def open_advanced_functions():
     for button in advanced_buttons:
         btn = tk.Button(advanced_window, text=button, font="Arial 15", relief="ridge", height=2, width=5)
         btn.grid(row=row, column=col, padx=5, pady=5)
-        btn.bind("<Button-1>", advanced_click)
+        if button == "Graph":
+            btn.config(command=plot_graph)
+        else:
+            btn.bind("<Button-1>", advanced_click)
         col += 1
         if col > 2:
             col = 0
