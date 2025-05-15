@@ -3,6 +3,26 @@ from tkinter import messagebox, simpledialog  # Import simpledialog for input di
 import math
 import matplotlib.pyplot as plt  # Import matplotlib for graphing
 
+def evaluate_expression(expr):
+    try:
+        return eval(expr)
+    except Exception:
+        return "Error"
+
+def advanced_operation(expr, op):
+    try:
+        value = float(expr)
+        if op == "x²":
+            return str(value ** 2)
+        elif op == "√x":
+            return str(math.sqrt(value))
+        elif op == "1/x":
+            return str(1 / value)
+        else:
+            return "Error"
+    except Exception:
+        return "Error"
+
 def click(event):
     global expression
     text = event.widget.cget("text")
