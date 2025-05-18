@@ -9,7 +9,7 @@ def evaluate_expression(expr):
     except Exception:
         return "Error"
 
-def advanced_operation(expr, op):
+def advanced_operation(expr, op, exponent=None):
     try:
         value = float(expr)
         if op == "x²":
@@ -18,6 +18,9 @@ def advanced_operation(expr, op):
             return str(math.sqrt(value))
         elif op == "1/x":
             return str(1 / value)
+        elif op == "xʸ":
+            if exponent is not None:
+                return str(value ** exponent)
         else:
             return "Error"
     except Exception:
@@ -58,6 +61,11 @@ def open_advanced_functions():
                 result = str(math.sqrt(float(expression)))
             elif text == "1/x":
                 result = str(1 / float(expression))
+            elif text == "xʸ":
+                # Prompt for exponent
+                exponent = simpledialog.askfloat("Exponent", "Enter the exponent (y):")
+                if exponent is not None:
+                    result = str(float(expression) ** exponent)
             else:
                 result = "Error"
             input_var.set(result)
@@ -95,7 +103,7 @@ def open_advanced_functions():
 
     # Advanced function buttons
     advanced_buttons = [
-        "x²", "√x", "1/x", "Graph"
+        "x²", "√x", "1/x", "xʸ","Graph"
     ]
 
     row = 0
