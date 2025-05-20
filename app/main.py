@@ -1,52 +1,23 @@
 import tkinter as tk
 from tkinter import messagebox, simpledialog
-import math
 import matplotlib.pyplot as plt
 
-def on_button_press(event):
-    event.widget.config(bg="light grey")
-
-def on_button_release(event):
-    event.widget.config(bg="SystemButtonFace")  # Default button color on Windows
+from logic import evaluate_expression, advanced_operation
+from ui_helpers import on_button_press, on_button_release
 
 def on_main_button_release(event):
     on_button_release(event)
     click(event)
-
-def evaluate_expression(expr):
-    try:
-        return eval(expr)
-    except Exception:
-        return "Error"
-
-def advanced_operation(expr, op, exponent=None):
-    try:
-        value = float(expr)
-        if op == "x²":
-            return str(value ** 2)
-        elif op == "√x":
-            return str(math.sqrt(value))
-        elif op == "1/x":
-            return str(1 / value)
-        elif op == "xʸ":
-            if exponent is not None:
-                return str(value ** exponent)
-            else:
-                return "Error"
-        else:
-            return "Error"
-    except Exception:
-        return "Error"
 
 def click(event):
     global expression
     text = event.widget.cget("text")
     if text == "=":
         try:
-            result = eval(expression)
+            result = evaluate_expression(expression)
             input_var.set(result)
             expression = str(result)
-        except Exception as e:
+        except Exception:
             messagebox.showerror("Error", "Invalid Input")
             expression = ""
             input_var.set("")
@@ -66,23 +37,17 @@ def open_advanced_functions():
         global expression
         text = event.widget.cget("text")
         try:
-            if text == "x²":
-                result = str(float(expression) ** 2)
-            elif text == "√x":
-                result = str(math.sqrt(float(expression)))
-            elif text == "1/x":
-                result = str(1 / float(expression))
-            elif text == "xʸ":
+            if text == "xʸ":
                 exponent = simpledialog.askfloat("Exponent", "Enter the exponent (y):")
                 if exponent is not None:
-                    result = str(float(expression) ** exponent)
+                    result = advanced_operation(expression, text, exponent)
                 else:
                     return
             else:
-                result = "Error"
+                result = advanced_operation(expression, text)
             input_var.set(result)
             expression = result
-        except Exception as e:
+        except Exception:
             messagebox.showerror("Error", "Invalid Input")
             expression = ""
             input_var.set("")
