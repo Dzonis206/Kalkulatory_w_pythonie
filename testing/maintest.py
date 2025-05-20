@@ -6,7 +6,7 @@ import math
 import sys
 import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from main import evaluate_expression, advanced_operation
+from app.main import evaluate_expression, advanced_operation
 
 class TestCalculator(unittest.TestCase):
     def test_basic_addition(self):
