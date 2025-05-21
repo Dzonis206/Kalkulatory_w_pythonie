@@ -2,7 +2,7 @@ import tkinter as tk
 from tkinter import messagebox, simpledialog
 import matplotlib.pyplot as plt
 
-from logic import evaluate_expression, advanced_operation
+from logic import evaluate_expression, advanced_operation, solve_quadratic
 from ui_helpers import on_button_press, on_button_release
 
 def on_main_button_release(event):
@@ -43,6 +43,14 @@ def open_advanced_functions():
                     result = advanced_operation(expression, text, exponent)
                 else:
                     return
+            elif text == "Quadratic":
+                a = simpledialog.askfloat("Quadratic", "Enter a:")
+                b = simpledialog.askfloat("Quadratic", "Enter b:")
+                c = simpledialog.askfloat("Quadratic", "Enter c:")
+                if None not in (a, b, c):
+                    result = solve_quadratic(a, b, c)
+                else:
+                    return
             else:
                 result = advanced_operation(expression, text)
             input_var.set(result)
@@ -78,7 +86,7 @@ def open_advanced_functions():
             messagebox.showerror("Error", f"Invalid function: {e}")
 
     advanced_buttons = [
-        "x²", "√x", "1/x", "xʸ", "Graph"
+        "x²", "√x", "1/x", "xʸ", "Graph", "Quadratic"
     ]
 
     row = 0
